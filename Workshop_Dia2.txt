@@ -16,9 +16,9 @@ Pikachu
 
 Evoluções: {"url":"https://pokeapi.co/api/v2/evolution-chain/10/"}
 
-pichu:    https://pokeapi.co/api/v2/pokemon-species/172/
-pikachu:  https://pokeapi.co/api/v2/pokemon-species/25/
-raichu:   https://pokeapi.co/api/v2/pokemon-species/26/
+pichu:    {"name":"raichu","url":"https://pokeapi.co/api/v2/pokemon-species/26/"}
+pikachu:  {"name":"pikachu","url":"https://pokeapi.co/api/v2/pokemon-species/25/"}
+raichu:   {"name":"pichu","url":"https://pokeapi.co/api/v2/pokemon-species/172/"}
 
 Charmander
 
@@ -34,9 +34,9 @@ Charmander
 
 Evoluções: {"url":"https://pokeapi.co/api/v2/evolution-chain/2/"}
 
-Charmander: https://pokeapi.co/api/v2/pokemon-species/4/
-Charmeleon: https://pokeapi.co/api/v2/pokemon-species/5/
-Charizard:  https://pokeapi.co/api/v2/pokemon-species/6/
+Charmander: {"name":"charmander","url":"https://pokeapi.co/api/v2/pokemon-species/4/"}
+Charmeleon: {"name":"charmeleon","url":"https://pokeapi.co/api/v2/pokemon-species/5/"}
+Charizard:  {"name":"charizard","url":"https://pokeapi.co/api/v2/pokemon-species/6/"}
 
 Squirtle
 
@@ -52,6 +52,6 @@ Squirtle
 
 Evoluções: {"url":"https://pokeapi.co/api/v2/evolution-chain/3/"}
 
-Squirtle:  https://pokeapi.co/api/v2/pokemon-species/7/
-Wartortle: https://pokeapi.co/api/v2/pokemon-species/8/
-Blastoise: https://pokeapi.co/api/v2/pokemon-species/9/
+Squirtle:  {"name":"squirtle","url":"https://pokeapi.co/api/v2/pokemon-species/7/"}
+Wartortle: {"name":"wartortle","url":"https://pokeapi.co/api/v2/pokemon-species/8/"}
+Blastoise: {"name":"blastoise","url":"https://pokeapi.co/api/v2/pokemon-species/9/"}
