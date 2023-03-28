@@ -1,4 +1,4 @@
-"""def maior(*n):
+def maior(*n):
     n1 = int(input('Digite o primeiro número: '))
     n2 = int(input('Digite o segundo número: '))
 
@@ -8,7 +8,7 @@
         print(f'O maior número é: {n2}')
 
 
-maior()"""
+maior()
 
 
 """def maior(n1, n2):

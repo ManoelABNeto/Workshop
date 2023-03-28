@@ -1,0 +1,57 @@
+Dia 2 - Workshop
+Funcionário: Manoel Agostinho Bezerra Neto
+rgm: 32073208
+
+Pikachu
+
+"types": [
+		{
+		"slot": 1,
+			"type": {
+				"name": "electric",
+				"url": "https://pokeapi.co/api/v2/type/13/"
+			}
+		}
+	]
+
+Evoluções: {"url":"https://pokeapi.co/api/v2/evolution-chain/10/"}
+
+pichu:    https://pokeapi.co/api/v2/pokemon-species/172/
+pikachu:  https://pokeapi.co/api/v2/pokemon-species/25/
+raichu:   https://pokeapi.co/api/v2/pokemon-species/26/
+
+Charmander
+
+"types": [
+		{
+			"slot": 1,
+			"type": {
+				"name": "fire",
+				"url": "https://pokeapi.co/api/v2/type/10/"
+			}
+		}
+	]
+
+Evoluções: {"url":"https://pokeapi.co/api/v2/evolution-chain/2/"}
+
+Charmander: https://pokeapi.co/api/v2/pokemon-species/4/
+Charmeleon: https://pokeapi.co/api/v2/pokemon-species/5/
+Charizard:  https://pokeapi.co/api/v2/pokemon-species/6/
+
+Squirtle
+
+"types": [
+		{
+			"slot": 1,
+			"type": {
+				"name": "water",
+				"url": "https://pokeapi.co/api/v2/type/11/"
+			}
+		}
+	]
+
+Evoluções: {"url":"https://pokeapi.co/api/v2/evolution-chain/3/"}
+
+Squirtle:  https://pokeapi.co/api/v2/pokemon-species/7/
+Wartortle: https://pokeapi.co/api/v2/pokemon-species/8/
+Blastoise: https://pokeapi.co/api/v2/pokemon-species/9/
