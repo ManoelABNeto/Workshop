@@ -1,31 +1,51 @@
-from rest_framework import viewsets, status
+from rest_framework import viewsets
 from rest_framework.response import Response
-from app.serializers import EstadoSerializer, CidadeSerializer
-from app.models import Estado, Cidade
+from rest_framework.decorators import api_view
+from rest_framework.exceptions import NotFound
+from rest_framework.pagination import PageNumberPagination
+from app.serializers import EstadoSerializer, CidadeSerializer, ClimaCidadeSerializer
+from app.models import Estado, Cidade, ClimaCidade
+from app.service import WeatherApi
+import os
+import requests
+
+
+API_WEATHER_KEY = os.getenv('API_WEATHER_KEY')
+
+
+class CustomPagination(PageNumberPagination):
+    page_size = 20
+    page_size_query_param = 'page_size'
+    max_page_size = 100
 
 
 class EstadoViewSet(viewsets.ModelViewSet):
-    
-    # allowed_methods = ('GET', 'POST', 'PUT', 'DELETE')
     queryset = Estado.objects.all()
     serializer_class = EstadoSerializer
-  
-    def create(self, request):
-        estado = self.get_serializer(data=request.data)
-        estado.is_valid(raise_exception=True)
-        estado.save()
-        return Response(estado.data, status=status.HTTP_201_CREATED)
-    
-    
+    pagination_class = CustomPagination
+      
     
 class CidadeViewSet(viewsets.ModelViewSet):
-    
-    # allowed_methods = ('GET', 'POST', 'PUT', 'DELETE')
     queryset = Cidade.objects.all()
     serializer_class = CidadeSerializer
+    pagination_class = CustomPagination
     
-    # def create(self, request):
-    #     cidade = self.get_serializer(data=request.data)
-    #     cidade.is_valid(raise_exception=True)
-    #     cidade.save()
-    #     return Response(cidade.data, status=status.HTTP_201_CREATED)
+
+class ClimaViewSet(viewsets.ModelViewSet):
+    queryset = ClimaCidade.objects.all()
+    serializer_class = ClimaCidadeSerializer
+    pagination_class = CustomPagination
+    
+
+    def create(self, request):
+        cidade_data = request.data.get('nome')
+        cidade_query = CidadeViewSet.queryset.filter(nome=cidade_data).first()
+        if not cidade_query:
+            raise NotFound('Cidade não foi encontrada!')
+        
+        weather_model = WeatherApi.obtem_clima_por_cidade(cidade_data)
+        clima_cidade = ClimaCidade(nome=weather_model.main, descricao=weather_model.description, cidade = cidade_query)
+        clima_cidade.save()
+        
+        clima_cidade = self.get_serializer(clima_cidade)
+        return Response(clima_cidade.data)
