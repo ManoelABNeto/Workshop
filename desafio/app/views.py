@@ -32,6 +32,7 @@ class CidadeViewSet(viewsets.ModelViewSet):
     
 
 class ClimaViewSet(viewsets.ModelViewSet):
+    allowed_methods = ['POST']
     queryset = ClimaCidade.objects.all()
     serializer_class = ClimaCidadeSerializer
     pagination_class = CustomPagination
