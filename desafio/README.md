@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ```
 4\. Criar um arquivo .env na raiz do projeto (desafio) com as seguintes variáveis: 
 ```
-DB_ENGINE
+DB_ENGINE='django.db.backends.postgresql_psycopg2'
 DB_NAME
 DB_USER
 DB_PASSWORD
